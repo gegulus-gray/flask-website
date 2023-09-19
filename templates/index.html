@@ -1,5 +1,17 @@
 {% extends "base.html" %}
 
 {% block content %}
-    {% block title %}<h2>Welcome my blog</h2>{% endblock %}
+    <h1>{% block title %}Welcome my blog{% endblock %}</h1>
+    {% for post in posts %}
+        <a href="{{ url_for('post', post_id=post['id']) }}">
+            <h5>{{ post['title'] }}</h5>
+        </a>
+
+        <span class="badge bg-danger">{{ post['created'] }}</span>
+
+        <a href="{{ url_for('edit', post_id=post['id']) }}" class="#">
+            <span class="badge bg-warning text-dark">Edit</span>
+        </a>
+        <hr>
+    {% endfor %}
 {% endblock %}
