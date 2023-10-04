@@ -1,4 +1,4 @@
-name: Flask API
+name: Flask Website
 
 on:
   push:
@@ -37,6 +37,6 @@ jobs:
         repository: ${{ secrets.DOCKERHUB_REPO }}
         push: true
         tag_with_ref: true
-        
+
 
 
