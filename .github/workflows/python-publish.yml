@@ -34,9 +34,8 @@ jobs:
     - name: build and push
       uses: docker/build-push-action@v5
       with:
-        repository: ${{ secrets.DOCKERHUB_REPO }}
         push: true
-        tag_with_ref: true
+        tags: ${{ secrets.DOCKERHUB_REPO }}:v1.3
 
 
 
