@@ -88,5 +88,5 @@ def delete(id):
 
 if __name__ == '__main__':
     app.run(
-        debug=True, passthrough_errors=True, use_debugger=False, use_reloader=False, host="0.0.0.0", port=os.environ['PORT']
+        debug=True,  host="0.0.0.0", port=os.environ['PORT']
     )

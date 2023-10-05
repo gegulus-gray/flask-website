@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   flask-app:
-    image: gegulusgray/flask-webapp:v1.3
+    image: gegulusgray/flask-webapp:latest
     ports:
     - "${PUBLIC_PORT}:${PORT}"
     restart: unless-stopped

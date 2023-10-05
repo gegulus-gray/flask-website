@@ -44,9 +44,11 @@ jobs:
             host: ${{ secrets.HOST }}
             username: ${{ secrets.USERNAME }}
             key: ${{ secrets.SSH_PRIVATE_KEY }}
-            port: 22
+            #port: 22
             script: |
-              echo "Hello world!"
+              cd flask-website/
+              ./deploy.sh
+              
               
             
 
