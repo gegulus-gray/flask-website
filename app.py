@@ -1,5 +1,6 @@
 import os
 import sqlite3
+import socket
 from flask import Flask, render_template, request, url_for, flash, redirect
 from werkzeug.exceptions import abort
 
@@ -21,13 +22,14 @@ def get_post(post_id):
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '12345678'
+docker_id = socket.gethostname()
 
 @app.route('/')
 def index():
     conn = get_db_connection()
     table_posts = conn.execute('SELECT * FROM posts').fetchall()
     conn.close()
-    return render_template('index.html', posts=table_posts )
+    return render_template('index.html', posts=table_posts, docker_id=docker_id )
 
 @app.route('/<int:post_id>')
 def post(post_id):

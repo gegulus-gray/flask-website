@@ -3,6 +3,7 @@
 {% block content %}
     <h1>{% block title %}Welcome my blog{% endblock %}</h1>
     {% for post in posts %}
+        <h1>{{ docker_id['docker_id'] }}</h1>
         <a href="{{ url_for('post', post_id=post['id']) }}">
             <h5>{{ post['title'] }}</h5>
         </a>
