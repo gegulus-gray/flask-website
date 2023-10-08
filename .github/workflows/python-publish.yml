@@ -47,7 +47,6 @@ jobs:
             port: ${{ secrets.PORT }}
             script: |
               echo "HELLOOO"
-              cd flask-website/
               ./deploy-flask-website.sh
               
               
