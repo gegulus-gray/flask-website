@@ -48,7 +48,7 @@ jobs:
             script: |
               echo "HELLOOO"
               cd flask-website/
-              ./deploy.sh
+              ./deploy-flask-website.sh
               
               
             
